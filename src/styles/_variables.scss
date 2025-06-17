@@ -1,0 +1,46 @@
+// Colors
+$color-primary: #00905E;
+$color-primary-light: #00C78C;
+$color-text: #262626;
+$color-text-light: #404040;
+$color-background: #CDCDCD;
+$color-background-light: #e0e0e0;
+$color-border: #979797;
+$color-white: #FFFFFF;
+$color-purple: #7A3DC6;
+$color-purple-light: #B65AE2;
+
+// Spacing
+$spacing-xs: 6px;
+$spacing-sm: 11px;
+$spacing-md: 20px;
+$spacing-lg: 20px;
+
+// Layout
+$border-radius: 2px;
+$max-width: 1060px;
+$header-height: 59px;
+
+// Shadows
+$shadow-sm: 0 1px 1px rgba(198, 198, 198, 0.5);
+$shadow-md: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+
+// Transitions
+$transition-speed: 0.2s;
+$transition-timing: ease;
+
+// Typography
+$font-family: 'Source Sans Pro', Arial, sans-serif;
+$font-size-xs: 12px;
+$font-size-sm: 13px;
+$font-size-base: 14px;
+$font-size-lg: 15px;
+
+// Breakpoints
+$breakpoint-sm: 500px;
+$breakpoint-md: 800px;
+$breakpoint-lg: 1200px;
+
+// Z-index
+$z-index-header: 1000;
+$z-index-dropdown: 99; 

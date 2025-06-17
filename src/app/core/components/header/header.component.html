@@ -1,0 +1,25 @@
+<header class="page-header">
+  <div class="page-header__content">
+    <a routerLink="/" class="page-header__logo">
+      <img src="assets/logo/logo.png" alt="GOG.com" width="43" height="37">
+    </a>
+    <div class="page-header__cart">
+      <div class="page-header__cart-separator"></div>
+      <button
+        class="page-header__cart-button"
+        [attr.aria-label]="'Shopping cart with ' + cartService.totalItems() + ' items'"
+        [attr.aria-expanded]="isCartOpen()"
+        aria-controls="cart-dropdown"
+        (click)="toggleCart()"
+      >
+        <img src="assets/cart.svg" alt="" class="page-header__cart-icon" aria-hidden="true" width="26" height="18">
+        <span class="page-header__cart-count" aria-hidden="true">{{ cartService.totalItems() }}</span>
+      </button>
+      <div class="page-header__cart-separator"></div>
+
+      @if (isCartOpen()) {
+        <app-cart-dropdown />
+      }
+    </div>
+  </div>
+</header>

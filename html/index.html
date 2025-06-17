@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List and Main Banner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      margin: 0;
+      background: #CDCDCD;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="page-header">
+    <div class="page-header__content">
+      <a href="/" class="page-header__logo">
+        <img src="img/logo.png" alt="GOG.com" width="43" height="37">
+      </a>
+      <div class="page-header__cart">
+        <div class="page-header__cart-separator"></div>
+        <button class="page-header__cart-button" aria-label="Shopping cart with 2 items" aria-expanded="false"
+          aria-controls="cart-dropdown">
+          <img src="img/cart.svg" alt="" class="page-header__cart-icon" aria-hidden="true">
+          <span class="page-header__cart-count" aria-hidden="true">2</span>
+        </button>
+        <div class="page-header__cart-separator"></div>
+
+        <div id="cart-dropdown" class="cart-dropdown" role="dialog" aria-label="Shopping cart details"
+          aria-hidden="true">
+          <div class="cart-dropdown__header">
+            <div class="cart-dropdown__summary">
+              <span class="cart-dropdown__count" role="status" aria-live="polite">2 ITEMS IN CART</span>
+              <span class="cart-dropdown__total" role="status" aria-live="polite">$15.97</span>
+            </div>
+            <button class="cart-dropdown__clear-button" aria-label="Clear all items from cart">CLEAR CART</button>
+          </div>
+
+          <div class="cart-dropdown__products" role="list">
+            <div class="cart-dropdown__product" role="listitem">
+              <div class="cart-dropdown__product-image">
+                <img src="https://c.animaapp.com/mbzel376i4cWDb/img/object-4.png" alt="Assassin's Creed game cover">
+              </div>
+              <div class="cart-dropdown__product-info">
+                <h3 class="cart-dropdown__product-title">ASSASSIN'S CREED: DIRECTOR'S CUT</h3>
+                <button class="cart-dropdown__remove-button"
+                  aria-label="Remove Assassin's Creed: Director's Cut from cart">Remove</button>
+              </div>
+              <div class="cart-dropdown__product-price" aria-label="Price">$9.99</div>
+            </div>
+
+            <div class="cart-dropdown__product" role="listitem">
+              <div class="cart-dropdown__product-image">
+                <img src="https://c.animaapp.com/mbzel376i4cWDb/img/object-2.png" alt="The Settlers 2 game cover">
+              </div>
+              <div class="cart-dropdown__product-info">
+                <h3 class="cart-dropdown__product-title">THE SETTLERS 2: GOLD EDITION</h3>
+                <button class="cart-dropdown__remove-button"
+                  aria-label="Remove The Settlers 2: Gold Edition from cart">Remove</button>
+              </div>
+              <div class="cart-dropdown__product-price" aria-label="Price">$5.99</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="main-banner">
+      <header class="main-banner__header">
+        <h2 class="main-banner__title">GAME OF THE WEEK</h2>
+      </header>
+      <div class="main-banner__main">
+        <img class="main-banner__bg" src="img/bg.png" alt="The Witcher Adventure Game cover" />
+        <div class="main-banner__overlay">
+          <div class="main-banner__button-wrapper">
+            <button class="main-banner__button">
+              A secret button that you should totally implement
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-list" aria-label="Game List">
+      <article class="game-card">
+        <div class="game-card__image-wrapper">
+          <img src="https://c.animaapp.com/mbzel376i4cWDb/img/object.png" alt="Oddworld: Stranger's Wrath"
+            class="game-card__image" />
+        </div>
+        <h2 class="game-card__title">ODDWORLD: STRANGER'S WRATH</h2>
+        <div class="game-card__actions">
+          <span class="badge badge--discount">-50%</span>
+          <span class="badge badge--price">$9.99</span>
+        </div>
+      </article>
+
+      <article class="game-card">
+        <div class="game-card__image-wrapper">
+          <img src="https://c.animaapp.com/mbzel376i4cWDb/img/object-1.png" alt="Chaos on Deponia"
+            class="game-card__image" />
+        </div>
+        <h2 class="game-card__title">CHAOS ON DEPONIA</h2>
+        <div class="game-card__actions">
+          <span class="badge badge--owned">OWNED</span>
+        </div>
+      </article>
+
+      <article class="game-card">
+        <div class="game-card__image-wrapper">
+          <img src="https://c.animaapp.com/mbzel376i4cWDb/img/object-2.png" alt="The Settlers 2: Gold Edition"
+            class="game-card__image" />
+        </div>
+        <h2 class="game-card__title">THE SETTLERS 2: GOLD EDITION</h2>
+        <div class="game-card__actions">
+          <span class="badge badge--in-cart">IN CART</span>
+        </div>
+      </article>
+
+      <article class="game-card">
+        <div class="game-card__image-wrapper">
+          <img src="https://c.animaapp.com/mbzel376i4cWDb/img/object-3.png" alt="Neverwinter Nights"
+            class="game-card__image" />
+        </div>
+        <h2 class="game-card__title">NEVERWINTER NIGHTS</h2>
+        <div class="game-card__actions">
+          <span class="badge badge--discount">-50%</span>
+          <span class="badge badge--price">$9.99</span>
+        </div>
+      </article>
+
+      <article class="game-card">
+        <div class="game-card__image-wrapper">
+          <img src="https://c.animaapp.com/mbzel376i4cWDb/img/object-4.png" alt="Assassin's Creed: Director's Cut"
+            class="game-card__image" />
+        </div>
+        <h2 class="game-card__title">ASSASSIN'S CREED: DIRECTOR'S CUT</h2>
+        <div class="game-card__actions">
+          <span class="badge badge--in-cart">IN CART</span>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+<script src="cart.js"></script>
+
+</html>

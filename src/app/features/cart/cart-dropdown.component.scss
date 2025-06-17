@@ -1,0 +1,142 @@
+@import 'variables';
+@import 'mixins';
+
+.cart-dropdown {
+  position: absolute;
+  width: 370px;
+  right: 0;
+  top: calc(100% - 2px);
+  background: $color-white;
+  border: 1px solid rgba($color-border, 0.5);
+  border-top: 1px solid $color-white;
+  margin-top: 1px;
+  z-index: $z-index-dropdown;
+}
+
+.cart-dropdown__header {
+  padding: 10px;
+  @include flex-between;
+  border-bottom: 1px solid rgba($color-border, 0.3);
+}
+
+.cart-dropdown__summary {
+  @include flex-between;
+  gap: $spacing-sm;
+  flex: 1;
+}
+
+.cart-dropdown__count,
+.cart-dropdown__total {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 700;
+  font-size: $font-size-lg;
+  line-height: 19px;
+  color: $color-text;
+}
+
+.cart-dropdown__total {
+  text-align: right;
+  padding-right: $spacing-sm;
+}
+
+.cart-dropdown__clear-button {
+  @include gradient-button($color-purple, $color-purple-light);
+  box-shadow: 0 0 0 0;
+  border-radius: 0;
+  width: 132px;
+  height: 43px;
+  justify-content: center;
+}
+
+.cart-dropdown__products {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-dropdown__product {
+  display: flex;
+  align-items: center;
+  padding: $spacing-xs;
+  gap: $spacing-sm;
+  position: relative;
+  padding-right: 10px;
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba($color-border, 0.3);
+  }
+}
+
+.cart-dropdown__product-image {
+  width: 100px;
+  height: 60px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.cart-dropdown__product-info {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  padding-bottom: 0;
+}
+
+.cart-dropdown__product-title {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 600;
+  font-size: $font-size-base;
+  line-height: 18px;
+  color: $color-text;
+  margin: 0;
+  @include text-ellipsis;
+  transition: transform $transition-speed cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cart-dropdown__remove-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: $font-family;
+  font-size: $font-size-xs;
+  line-height: 13px;
+  text-decoration-line: underline;
+  color: $color-text;
+  cursor: pointer;
+  width: fit-content;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  opacity: 0;
+  transition: opacity $transition-speed $transition-timing;
+
+  &:hover {
+    color: $color-purple;
+  }
+}
+
+.cart-dropdown__product:hover {
+  .cart-dropdown__product-title {
+    transform: translateY(-10px);
+  }
+
+  .cart-dropdown__remove-button {
+    opacity: 1;
+  }
+}
+
+.cart-dropdown__product-price {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 600;
+  font-size: $font-size-sm;
+  line-height: 16px;
+  text-align: right;
+  color: $color-text-light;
+  min-width: 40px;
+} 

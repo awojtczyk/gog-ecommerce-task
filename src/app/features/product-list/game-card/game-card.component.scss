@@ -1,0 +1,103 @@
+@import 'variables';
+@import 'mixins';
+
+.game-card {
+  background: $color-background-light;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 110px auto auto;
+  grid-template-areas:
+    "image"
+    "title"
+    "actions";
+  min-width: 0;
+  height: 100%;
+  transition: 
+    transform $transition-speed $transition-timing,
+    box-shadow $transition-speed $transition-timing;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &__image-wrapper {
+    grid-area: image;
+    position: relative;
+    height: 110px;
+    width: 100%;
+    @include flex-center;
+    justify-content: flex-start;
+  }
+
+  &__image {
+    height: 110px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__title {
+    grid-area: title;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 600;
+    font-size: $font-size-base;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: $color-text;
+    padding: $spacing-sm $spacing-sm 0 $spacing-sm;
+    margin: 0;
+    min-height: 34px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__actions {
+    grid-area: actions;
+    padding: 1px $spacing-xs 7px $spacing-xs;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: $spacing-xs;
+    justify-content: end;
+    align-items: center;
+    margin-top: auto;
+    min-height: 22px;
+  }
+}
+
+.badge {
+  @include badge;
+
+  &--discount {
+    background: $color-primary;
+    color: $color-white;
+    border-color: transparent;
+  }
+
+  &--price {
+    background: $color-background-light;
+    color: $color-text-light;
+    border: 1px solid $color-border;
+    cursor: pointer;
+
+    &:hover {
+      background: $color-primary;
+      color: $color-white;
+      border-color: transparent;
+    }
+  }
+
+  &--in-cart {
+    background: $color-background-light;
+    color: $color-text-light;
+    border: 1px solid $color-border;
+  }
+
+  &--owned {
+    background: $color-background-light;
+    color: $color-border;
+    border: 1px solid $color-border;
+    opacity: 0.5;
+  }
+} 

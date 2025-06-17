@@ -1,0 +1,26 @@
+<article class="game-card" [attr.aria-labelledby]="'game-title-' + product.id">
+  <div class="game-card__image-wrapper">
+    <img [src]="product.imageUrl" [alt]="product.title" class="game-card__image" width="196" height="110" />
+  </div>
+  <h2 [id]="'game-title-' + product.id" class="game-card__title">{{ product.title }}</h2>
+  <div class="game-card__actions">
+    @if (product.isOwned) {
+      <span class="badge badge--owned" role="status" [attr.aria-label]="'Game already owned'">OWNED</span>
+    } @else {
+      @if (product.discount) {
+        <span class="badge badge--discount" role="status" [attr.aria-label]="product.discount + ' percent discount'">-{{ product.discount }}%</span>
+      }
+      @if (isInCart) {
+        <span class="badge badge--in-cart" role="status" [attr.aria-label]="'Game already in cart'">IN CART</span>
+      } @else {
+        <button
+          class="badge badge--price"
+          (click)="addToCart.emit(product)"
+          [attr.aria-label]="'Add ' + product.title + ' to cart'"
+        >
+          {{ product.price | currency:'USD':'symbol-narrow':'1.2-2' }}
+        </button>
+      }
+    }
+  </div>
+</article>

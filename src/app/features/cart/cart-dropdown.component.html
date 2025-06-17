@@ -1,0 +1,42 @@
+<div id="cart-dropdown" class="cart-dropdown" role="dialog" aria-label="Shopping cart details">
+  <div class="cart-dropdown__header">
+    <div class="cart-dropdown__summary">
+      <span class="cart-dropdown__count" role="status" aria-live="polite">
+        {{ cartService.totalItems() }} ITEMS IN CART
+      </span>
+      <span class="cart-dropdown__total" role="status" aria-live="polite">
+        {{ cartService.totalPrice() | currency:'USD':'symbol-narrow':'1.2-2' }}
+      </span>
+    </div>
+    <button
+      class="cart-dropdown__clear-button"
+      aria-label="Clear all items from cart"
+      (click)="cartService.clearCart()"
+    >
+      CLEAR CART
+    </button>
+  </div>
+
+  <div class="cart-dropdown__products" role="list">
+    @for (item of cartService.items(); track item.id) {
+      <div class="cart-dropdown__product" role="listitem">
+        <div class="cart-dropdown__product-image">
+          <img [src]="item.imageUrl" [alt]="item.title" width="100" height="60">
+        </div>
+        <div class="cart-dropdown__product-info">
+          <h3 class="cart-dropdown__product-title">{{ item.title }}</h3>
+          <button
+            class="cart-dropdown__remove-button"
+            [attr.aria-label]="'Remove ' + item.title + ' from cart'"
+            (click)="cartService.removeFromCart(item.id)"
+          >
+            Remove
+          </button>
+        </div>
+        <div class="cart-dropdown__product-price" aria-label="Price">
+          {{ item.price | currency:'USD':'symbol-narrow':'1.2-2' }}
+        </div>
+      </div>
+    }
+  </div>
+</div>
